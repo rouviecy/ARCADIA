@@ -1,0 +1,5 @@
+modele/__pycache__/*
+modele/*.cc
+modele/*.h
+modele/*.py
+simulateur/bin/*

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package jdd;
+
+import "commun.proto";
+
+message Ordre{
+	sint32 idRobot = 1;
+	Position objectifMouvementPos = 2;
+	sint32 objectifPinceId = 3;
+	bool libererPince = 4;
+	ZSQD mouvementSimple = 5;
+	
+	enum ZSQD{
+		NOTHING = 0;
+		STOP = 1;
+		HAUT = 2;
+		BAS = 3;
+		GAUCHE = 4;
+		DROITE = 5;
+		GRAB_SOMETHING = 6;
+	}
+}

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package jdd;
+
+import "commun.proto";
+
+message Jeu{
+	float t = 1;
+	repeated Equipe equipes = 2;
+	repeated Tresor tresors = 3;
+}
+
+message Equipe{
+	Camp camp = 1;
+	repeated Robot membres = 2;
+	sint32 score = 3;
+}
+
+message Robot{
+	sint32 id = 1;
+	string nom = 2;
+	Position pos = 3;
+	Tresor charge = 4;
+	Position pince = 5;
+	bool pinceDeployee = 6;
+}
+
+message Tresor{
+	sint32 id = 1;
+	Position pos = 2;
+	sint32 idPorteur = 3;
+}
+
+enum Camp{
+	NEUTRE = 0;
+	VERT = 1;
+	ROUGE = 2;
+}
